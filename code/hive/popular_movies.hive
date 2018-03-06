@@ -1,0 +1,7 @@
+select b.name, count(a.movie_id) as ratingCount
+from ratings a
+join movie_names b
+on a.movie_id = b.movie_id
+group by b.name
+order by ratingCount
+desc
