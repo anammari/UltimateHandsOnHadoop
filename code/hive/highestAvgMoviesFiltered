@@ -1,0 +1,8 @@
+SELECT b.name, AVG(a.rating) AS ratingAvg, COUNT(a.movie_id) AS ratingCount
+FROM ratings a
+JOIN movie_names b
+ON a.movie_id = b.movie_id
+GROUP BY b.name
+HAVING ratingCount > 10
+ORDER BY ratingAvg
+DESC;
