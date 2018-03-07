@@ -1,0 +1,9 @@
+Import mysql table into HDFS:
+sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1
+
+Import mysql table into Hive table:
+sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies -m 1 --hive-import
+
+Export hive table into mysql database:
+sqoop export --connect jdbc:mysql://localhost/movielens -m 1 --driver com.mysql.jdbc.Driver --table exported_movies
+--export-dir /apps/hive/warehouse/movies --input-fields-terminated-by '\0001'
