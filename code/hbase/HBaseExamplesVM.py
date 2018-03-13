@@ -1,6 +1,6 @@
 from starbase import Connection
 
-c = Connection("127.0.0.1", "8020")
+c = Connection("127.0.0.1", "8000")
 
 ratings = c.table('ratings')
 
